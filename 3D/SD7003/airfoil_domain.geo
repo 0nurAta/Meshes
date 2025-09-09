@@ -183,7 +183,17 @@ Transfinite Surface {20};
 Recombine Surface{:};
 
 Extrude {0, 0, 2} {Surface{:}; Layers {20}; Recombine;}
-//+
-Physical Surface("Wall", 492) = {126, 116};
-//+
-Physical Surface("Symmetry", 493) = {73, 117, 183, 359, 381, 161, 139, 95, 227, 403, 425, 447, 469, 491, 205, 249, 271, 315, 293, 337};
+//
+Physical Surface("Wall", 1) = {126, 116};
+Physical Surface("Inflow", 2) = {214, 192, 236, 482};
+Physical Surface("Outflow", 3) = {328, 354, 372, 390};
+Physical Surface("Outflow", 3) += {324, 302, 280, 266, 240, 486, 468, 446, 424, 394};
+Physical Surface("Symmetry", 4) = {73, 117, 183, 359, 381, 161, 139, 95, 227, 403, 425, 447, 469, 491, 205, 249, 271, 315, 293, 337};
+Physical Surface("Symmetry", 4) += {1, 3, 6, 14, 15, 5, 2, 8, 7, 9, 10, 11, 12, 17, 16, 4, 19, 20, 18, 13};
+
+//
+Physical Volume("Interior", 9) = {6, 3, 1, 2, 4, 5};
+Physical Volume("XPML", 100) = {7, 8, 14, 15};
+Physical Volume("YPML", 200) = {12, 11, 10, 19, 18, 17};
+Physical Volume("XYPML", 300) = {9, 13, 16, 20};
+
