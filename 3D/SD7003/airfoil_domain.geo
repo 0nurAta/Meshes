@@ -103,17 +103,17 @@ Line(49) = {1302, 1307};
 Line(50) = {1302, 1300};
 Line(51) = {1304, 1293};
 
-Transfinite Curve {7, 14, 16, 5, 17, 15, 8, 6} = 25 Using Progression 1.1;
-Transfinite Curve {9, 12, 2} = 15 Using Progression 1;
-Transfinite Curve {3, 19, 18, 10} = 25 Using Progression 1;
-Transfinite Curve {4, 13, 11} = 25 Using Progression 1.1;
+Transfinite Curve {7, 14, 16, 5, 17, 15, 8, 6} = 15 Using Progression 1.1;
+Transfinite Curve {9, 12, 2} = 5 Using Progression 1;
+Transfinite Curve {3, 19, 18, 10} = 15 Using Progression 1;
+Transfinite Curve {4, 13, 11} = 15 Using Progression 1.1;
 //+
 
 Transfinite Curve {21, 22, 20, 23, 38, 37, 51, 27, 36, 28, 35, 34, 31, 33, 32, 48, 47, 45, 42, 43, 44, 40} = 4 Using Progression 1;
-Transfinite Curve {39, 41, 29, 30} = 25 Using Progression 1.1;
-Transfinite Curve {46, 24, 24, 46} = 15 Using Progression 1;
-Transfinite Curve {25, 50} = 25 Using Progression 1;
-Transfinite Curve {49, 26} = 25 Using Progression 1.1;
+Transfinite Curve {39, 41, 29, 30} = 15 Using Progression 1.1;
+Transfinite Curve {46, 24, 24, 46} = 5 Using Progression 1;
+Transfinite Curve {25, 50} = 15 Using Progression 1;
+Transfinite Curve {49, 26} = 15 Using Progression 1.1;
 
 Curve Loop(1) = {12, 14, -2, -7};
 Surface(1) = {1};
@@ -182,7 +182,7 @@ Transfinite Surface {20};
 
 Recombine Surface{:};
 
-Extrude {0, 0, 2} {Surface{:}; Layers {20}; Recombine;}
+Extrude {0, 0, 2} {Surface{:}; Layers {10}; Recombine;}
 //
 Physical Surface("Wall", 1) = {126, 116};
 Physical Surface("Inflow", 2) = {214, 192, 236, 482};

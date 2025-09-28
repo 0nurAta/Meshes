@@ -1,6 +1,7 @@
 import numpy as np
 
-data = np.loadtxt('airfoil.dat', skiprows=3)
+#data = np.loadtxt('airfoil.dat', skiprows=3)
+data = np.loadtxt('airfoil_rotated.dat')
 
 top = data[1:len(data)]
 
