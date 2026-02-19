@@ -1,5 +1,5 @@
 
-Include "n0012.geo";
+Include "airfoil.geo";
 
 // Main Domain Boundaries
 ymax = 4;
@@ -8,6 +8,7 @@ xmin = -3.5;
 
 // Pml Boundaries
 w = 1;
+
 
 Point(1289) = {-0.5, ymax, 0, 1.0};
 Point(1290) = {-0.5, -ymax, 0, 1.0};
@@ -51,15 +52,15 @@ Line(8) = {1297, 1296};
 Line(9) = {1296, 1290};
 Line(10) = {1290, 1292};
 Line(11) = {1292, 1294};
-Line(12) = {1297, 64};
-Line(13) = {1, 1295};
+Line(12) = {1297, 100};
+Line(13) = {200, 1295};
 
-Line(14) = {64, 1289};
-Line(15) = {64, 1290};
-Line(16) = {1, 1291};
-Line(17) = {1, 1292};
+Line(14) = {100, 1289};
+Line(15) = {100, 1290};
+Line(16) = {200, 1291};
+Line(17) = {200, 1292};
 
-Split Curve {1} Point {64, 1};
+Split Curve {1} Point {100, 200};
 //+
 
 Line(20) = {1298, 1314};
@@ -95,29 +96,16 @@ Line(49) = {1302, 1307};
 Line(50) = {1302, 1300};
 Line(51) = {1304, 1293};
 
-// Control Parameters (Coarse)
-//n_vert = 100/1.4/1.4;
-//n_horz1 = 40/1.0/1.4;
-//n_horz2 = 60/1.4/1.4;
-//n_horz3 = 200/1.4/1.4;
-//n_pml = 6/1.2;
 
-// Control Parameters (Mid)
-//n_vert = 100/1.4;
-//n_horz1 = 40/1.0;
-//n_horz2 = 60/1.4;
-//n_horz3 = 200/1.4;
-//n_pml = 6;
-
-// Control Parameters (Fine)
-n_vert = 100;
-n_horz1 = 40;
-n_horz2 = 60;
-n_horz3 = 200;
+// Control Parameters
+n_vert = 100/1.4;
+n_horz1 = 40/1.0;
+n_horz2 = 60/1.4;
+n_horz3 = 200/1.4;
 n_pml = 6;
 
-front_prog = 0.90*0.95;
-back_prog = 1.02*1.01;
+front_prog = 0.90;
+back_prog = 1.02;
 vert_prog = 1.075;
 
 Transfinite Curve {7, 14, 16, 5, 17, 15, 8, 6} = n_vert Using Progression vert_prog;
@@ -175,37 +163,17 @@ Surface(19) = {19};
 Curve Loop(20) = {42,43,44,45};
 Surface(20) = {20};
 
-//+
-Transfinite Surface {1};
-Transfinite Surface {2};
-Transfinite Surface {3};
-Transfinite Surface {4};
-Transfinite Surface {5};
-Transfinite Surface {6};
-Transfinite Surface {7};
-Transfinite Surface {8};
-Transfinite Surface {9};
-Transfinite Surface {10};
-Transfinite Surface {11};
-Transfinite Surface {12};
-Transfinite Surface {13};
-Transfinite Surface {14};
-Transfinite Surface {15};
-Transfinite Surface {16};
-Transfinite Surface {17};
-Transfinite Surface {18};
-Transfinite Surface {19};
-Transfinite Surface {20};
-
+Transfinite Surface {:};
 Recombine Surface{:};
 
+// Pyhsical Curves
 Physical Curve("Wall", 1) = {18, 19};
-Physical Curve("Inflow", 2) = {39, 21, 41, 43, 44, 46, 50, 49, 32, 22, 24, 25, 26, 27};
-Physical Curve("Outflow", 3) = {28, 29, 30, 31};
+Physical Curve("Inflow", 2) = {39, 41, 43, 21};
+Physical Curve("Outflow", 3) = {22, 24, 25, 26, 27, 28, 29, 30, 31, 32, 49, 50, 46, 44};
 
-Physical Surface("Interior", 9) = {1, 2, 3, 4, 5, 6};
+// Physical Surfaces
+Physical Surface("Interior", 9) = {1, 3, 6, 5, 4, 2};
+
 Physical Surface("XPML", 100) = {7, 8, 14, 15};
-Physical Surface("YPML", 200) = {10, 11, 12, 17, 18, 19};
-Physical Surface("XYPML", 300) = {9, 20, 13, 16};
-
-
+Physical Surface("YPML", 200) = {19, 18, 17, 12, 11, 10};
+Physical Surface("XYPML", 300) = {9, 20, 16, 13};

@@ -1,11 +1,11 @@
 import numpy as np
 
 #data = np.loadtxt('airfoil.dat', skiprows=3)
-data = np.loadtxt('n0012.dat', skiprows=3)
+data = np.loadtxt('Joukowsk0015.dat', skiprows=3)
 
 top = data[1:len(data)]
 
-file = open('n0012.geo', 'w')
+file = open('Joukowsk0015.geo', 'w')
 
 for i in range(len(top)):
 

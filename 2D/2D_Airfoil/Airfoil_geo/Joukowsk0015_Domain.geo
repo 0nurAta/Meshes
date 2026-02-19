@@ -1,5 +1,5 @@
 
-Include "n0012.geo";
+Include "Joukowsk0015.geo";
 
 // Main Domain Boundaries
 ymax = 4;
@@ -51,15 +51,15 @@ Line(8) = {1297, 1296};
 Line(9) = {1296, 1290};
 Line(10) = {1290, 1292};
 Line(11) = {1292, 1294};
-Line(12) = {1297, 64};
+Line(12) = {1297, 45};
 Line(13) = {1, 1295};
 
-Line(14) = {64, 1289};
-Line(15) = {64, 1290};
+Line(14) = {45, 1289};
+Line(15) = {45, 1290};
 Line(16) = {1, 1291};
 Line(17) = {1, 1292};
 
-Split Curve {1} Point {64, 1};
+Split Curve {1} Point {45, 1};
 //+
 
 Line(20) = {1298, 1314};
@@ -95,26 +95,12 @@ Line(49) = {1302, 1307};
 Line(50) = {1302, 1300};
 Line(51) = {1304, 1293};
 
-// Control Parameters (Coarse)
-//n_vert = 100/1.4/1.4;
-//n_horz1 = 40/1.0/1.4;
-//n_horz2 = 60/1.4/1.4;
-//n_horz3 = 200/1.4/1.4;
-//n_pml = 6/1.2;
-
-// Control Parameters (Mid)
-//n_vert = 100/1.4;
-//n_horz1 = 40/1.0;
-//n_horz2 = 60/1.4;
-//n_horz3 = 200/1.4;
-//n_pml = 6;
-
-// Control Parameters (Fine)
-n_vert = 100;
-n_horz1 = 40;
-n_horz2 = 60;
-n_horz3 = 200;
-n_pml = 6;
+// Control Parameters
+n_vert = 100/1.4/1.4;
+n_horz1 = 40/1.0/1.4;
+n_horz2 = 60/1.4/1.4;
+n_horz3 = 200/1.4/1.4;
+n_pml = 6/1.2;
 
 front_prog = 0.90*0.95;
 back_prog = 1.02*1.01;
